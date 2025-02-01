@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CookMistry - Food Recipe Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="cooking">
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+                <span class="typing-text">CookMistry</span>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#recipes">Recipes</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="typing-effect">Discover Amazing Recipes</h1>
+            <p data-aos="fade-up" data-aos-delay="200">Find and share the best recipes from around the world</p>
+            <div class="search-box" data-aos="fade-up" data-aos-delay="400">
+                <input type="text" id="recipeSearch" placeholder="Search recipes...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="hero-stats" data-aos="fade-up" data-aos-delay="600">
+                <div class="stat">
+                    <span class="number counter" data-target="1000">0</span>
+                    <span class="label">Recipes</span>
+                </div>
+                <div class="stat">
+                    <span class="number counter" data-target="500">0</span>
+                    <span class="label">Chefs</span>
+                </div>
+                <div class="stat">
+                    <span class="number counter" data-target="50000">0</span>
+                    <span class="label">Users</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image" data-aos="zoom-in" data-aos-delay="300">
+            <div class="floating-images">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Hero Image" class="main-image">
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Floating Food 1" class="float-1">
+                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Floating Food 2" class="float-2">
+            </div>
+        </div>
+    </section>
+    <!-- Search  Section -->
+    <section class="search-results" id="searchResults">
+        <h2 class="section-title" data-aos="fade-up">Search Results</h2>
+        <div class="recipes-grid" id="searchResultsGrid">
+            <!-- Recipes will be populated by JavaScript -->
+            <div class="loading-spinner">
+                <div class="spinner"></div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Categories Section -->
+    <section class="categories" id="categories">
+        <h2 class="section-title" data-aos="fade-up">Popular Categories</h2>
+        <div class="categories-grid">
+            <!-- Breakfast -->
+            <div class="category-card" data-aos="flip-left" data-aos-delay="100">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666" alt="Breakfast">
+                        <h3>Breakfast</h3>
+                        <span>42 Recipes</span>
+                    </div>
+                    <div class="card-back">
+                        <h3>Breakfast</h3>
+                        <p>Start your day with our delicious breakfast recipes</p>
+                        <button class="view-category">Explore</button>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Main Course -->
+            <div class="category-card" data-aos="flip-left" data-aos-delay="200">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c" alt="Main Course">
+                        <h3>Main Course</h3>
+                        <span>156 Recipes</span>
+                    </div>
+                    <div class="card-back">
+                        <h3>Main Course</h3>
+                        <p>Explore our diverse collection of main course dishes</p>
+                        <button class="view-category">Explore</button>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Appetizers -->
+            <div class="category-card" data-aos="flip-left" data-aos-delay="300">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="https://images.unsplash.com/photo-1541529086526-db283c563270" alt="Appetizers">
+                        <h3>Appetizers</h3>
+                        <span>89 Recipes</span>
+                    </div>
+                    <div class="card-back">
+                        <h3>Appetizers</h3>
+                        <p>Delightful small bites to start your meal</p>
+                        <button class="view-category">Explore</button>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Desserts -->
+            <div class="category-card" data-aos="flip-left" data-aos-delay="400">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="https://images.unsplash.com/photo-1488477304112-4944851de03d" alt="Desserts">
+                        <h3>Desserts</h3>
+                        <span>128 Recipes</span>
+                    </div>
+                    <div class="card-back">
+                        <h3>Desserts</h3>
+                        <p>Sweet treats and indulgent desserts for every occasion</p>
+                        <button class="view-category">Explore</button>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Healthy -->
+            <div class="category-card" data-aos="flip-left" data-aos-delay="500">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd" alt="Healthy">
+                        <h3>Healthy</h3>
+                        <span>94 Recipes</span>
+                    </div>
+                    <div class="card-back">
+                        <h3>Healthy</h3>
+                        <p>Nutritious and wholesome recipes for a healthy lifestyle</p>
+                        <button class="view-category">Explore</button>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Quick & Easy -->
+            <div class="category-card" data-aos="flip-left" data-aos-delay="600">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="https://images.unsplash.com/photo-1495521821757-a1efb6729352" alt="Quick & Easy">
+                        <h3>Quick & Easy</h3>
+                        <span>73 Recipes</span>
+                    </div>
+                    <div class="card-back">
+                        <h3>Quick & Easy</h3>
+                        <p>Fast and simple recipes ready in 30 minutes or less</p>
+                        <button class="view-category">Explore</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recipe Results Section -->
+    <section class="recipe-results" id="searchResults">
+        <div class="results-grid"></div>
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+        </div>
+    </section>
+
+    <!-- Featured Recipes -->
+    <section class="featured-recipes" id="recipes">
+        <h2 class="section-title" data-aos="fade-up">Featured Recipes</h2>
+        <div class="recipes-grid" id="featuredRecipes">
+            <!-- Recipes will be populated by JavaScript -->
+            <div class="loading-spinner">
+                <div class="spinner"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter" data-aos="fade-up">
+        <div class="newsletter-content">
+            <h2 class="glowing-text">Subscribe to Our Newsletter</h2>
+            <p>Get weekly recipes and cooking tips delivered to your inbox</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit" class="pulse-button">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section" data-aos="fade-right">
+                <div class="logo">
+                    <i class="fas fa-utensils"></i>
+                    <span>CookMistry</span>
+                </div>
+                <p>Discover and share the best recipes from around the world.</p>
+                <div class="social-links">
+                    <a href="#" class="social-hover"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-hover"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-hover"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-hover"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <!-- Other footer sections -->
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 CookMistry. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

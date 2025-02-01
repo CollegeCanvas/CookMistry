@@ -1,0 +1,174 @@
+/* Common Styles for Category Pages */
+:root {
+    --breakfast-color: #ff9a9e;
+    --lunch-color: #67b26f;
+    --dinner-color: #4568dc;
+    --indian-color: #ff6b6b;
+    --dessert-color: #fc5c7d;
+    --quick-color: #56ccf2;
+}
+
+/* Theme-specific colors */
+.breakfast-theme { --theme-color: var(--breakfast-color); }
+.lunch-theme { --theme-color: var(--lunch-color); }
+.dinner-theme { --theme-color: var(--dinner-color); }
+.indian-theme { --theme-color: var(--indian-color); }
+.dessert-theme { --theme-color: var(--dessert-color); }
+.quick-theme { --theme-color: var(--quick-color); }
+
+/* Category Hero Section */
+.category-hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    padding: 6rem 5% 2rem;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--theme-color) 0%, rgba(255,255,255,0.9) 100%);
+}
+
+.category-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://images.unsplash.com/photo-1495195134817-aeb325a55b65?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.category-hero .hero-content {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+    color: var(--text-color);
+}
+
+.category-hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    background: linear-gradient(45deg, var(--theme-color), var(--text-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.category-hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+/* Category Tags */
+.category-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem 0;
+    justify-content: center;
+}
+
+.category-tag {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 50px;
+    background: white;
+    color: var(--text-color);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.category-tag:hover,
+.category-tag.active {
+    background: var(--theme-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+/* Tips Section */
+.tips-section {
+    padding: 5rem 5%;
+    background: var(--light-gray);
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.tip-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.tip-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.tip-card i {
+    font-size: 2.5rem;
+    color: var(--theme-color);
+    margin-bottom: 1rem;
+}
+
+.tip-card h3 {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.tip-card p {
+    color: var(--dark-gray);
+    line-height: 1.6;
+}
+
+/* Recipe Grid Animations */
+.recipe-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .category-hero {
+        padding-top: 8rem;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .category-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .category-hero p {
+        margin: 0 auto 2rem;
+    }
+
+    .floating-images {
+        margin-top: 2rem;
+    }
+
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+}
