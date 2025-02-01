@@ -51,7 +51,7 @@
     font-size: 4rem;
     margin-bottom: 1.5rem;
     line-height: 1.2;
-    background: linear-gradient(45deg, var(--theme-color), var(--text-color));
+    background: linear-gradient(315deg, var(--theme-color), var(--text-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
