@@ -20,7 +20,9 @@ body {
     line-height: 1.6;
     color: var(--text-color);
 }
-
+.navbar-link{
+    text-decoration: none;
+}
 /* Preloader */
 .preloader {
     position: fixed;
