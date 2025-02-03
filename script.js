@@ -107,6 +107,109 @@ class RecipeAPI {
         });
     }
 
+    async loadFeaturedRecipes() {
+        const indianAndTrendingRecipes = [
+            // Indian Recipes
+            716426, 782585, 649895, 660306, 641975, 638604, 658958, 633942, 647830,
+            
+            // Trending Global Recipes
+            715495, 647166, 665769, 642263, 663559, 654487, 652987, 652294, 651248,
+            
+            // More Indian Recipes
+            769774, 794327, 634529, 656231, 715834, 655573, 715505, 632159, 633851
+        ];
+        
+        try {
+            this.showLoading(this.featuredGrid);
+            
+            // Shuffle the array to get random recipes
+            const shuffledRecipes = this.shuffleArray(indianAndTrendingRecipes);
+            
+            // Take the first 9 recipes
+            const selectedRecipeIds = shuffledRecipes.slice(0, 9);
+            
+            // Verify and filter recipes
+            const recipes = [];
+            for (const id of selectedRecipeIds) {
+                try {
+                    const params = new URLSearchParams({
+                        apiKey: config.API_KEY,
+                        includeNutrition: false
+                    });
+                    
+                    const response = await fetch(`${config.BASE_URL}/${id}/information?${params}`);
+                    
+                    if (!response.ok) {
+                        console.warn(`Recipe ${id} failed to load. Skipping.`);
+                        continue;
+                    }
+                    
+                    const recipe = await response.json();
+                    
+                    // Additional validation
+                    if (!recipe.title || !recipe.image) {
+                        console.warn(`Recipe ${id} missing critical information. Skipping.`);
+                        continue;
+                    }
+                    
+                    recipes.push(recipe);
+                    
+                    // Break if we have 9 recipes
+                    if (recipes.length === 9) break;
+                } catch (recipeError) {
+                    console.error(`Error processing recipe ${id}:`, recipeError);
+                }
+            }
+            
+            // If not enough recipes, attempt to fill with more from the list
+            while (recipes.length < 9 && selectedRecipeIds.length > 0) {
+                const remainingIds = indianAndTrendingRecipes.filter(
+                    id => !selectedRecipeIds.includes(id)
+                );
+                
+                if (remainingIds.length === 0) break;
+                
+                const additionalId = remainingIds[Math.floor(Math.random() * remainingIds.length)];
+                
+                try {
+                    const params = new URLSearchParams({
+                        apiKey: config.API_KEY,
+                        includeNutrition: false
+                    });
+                    
+                    const response = await fetch(`${config.BASE_URL}/${additionalId}/information?${params}`);
+                    
+                    if (!response.ok) continue;
+                    
+                    const recipe = await response.json();
+                    
+                    if (!recipe.title || !recipe.image) continue;
+                    
+                    recipes.push(recipe);
+                } catch (additionalError) {
+                    console.error(`Error processing additional recipe ${additionalId}:`, additionalError);
+                }
+            }
+            
+            this.displayRecipes(recipes, this.featuredGrid);
+        } catch (error) {
+            console.error('Error loading featured recipes:', error);
+            this.showError('Failed to load featured recipes. Please try again.');
+        } finally {
+            this.hideLoading(this.featuredGrid);
+        }
+    }
+    
+    // Fisher-Yates shuffle algorithm
+    shuffleArray(array) {
+        const shuffledArray = [...array];
+        for (let i = shuffledArray.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+        }
+        return shuffledArray;
+    }
+
     async searchRecipes(query) {
         if (!query) {
             this.searchResultsGrid.innerHTML = '';
@@ -301,6 +404,7 @@ class RecipeAPI {
         }
         this.hideLoading(document.querySelector('.recipes-grid'));
     }
+
     findNutrient(nutrients, name) {
         return nutrients.find(n => n.name === name);
     }
@@ -364,6 +468,7 @@ class RecipeAPI {
         setTimeout(() => errorDiv.remove(), 3000);
     }
 }
+
 // Initialize Recipe API
 const recipeAPI = new RecipeAPI();
 
