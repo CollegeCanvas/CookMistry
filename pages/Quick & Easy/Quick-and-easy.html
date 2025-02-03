@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lunch Recipes - CookMistry</title>
+    <title>Quick and Easy Recipes - CookMistry</title>
     <link rel="stylesheet" href="../../style.css">
-    <link rel="stylesheet" href="./Lunch.css">
+    <link rel="stylesheet" href="./Quick-and-Easy.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
-<body class="breakfast-theme">
+<body class="quick-theme">
 
      <!-- Header -->
      <header class="header">
         <nav class="navbar">
-            <a class="navbar-link" href="/CookMistry/index.html"><div class="logo">
+            <a class="navbar-link" href="/index.html"><div class="logo">
                 <i class="fas fa-utensils"></i>
                 <span class="typing-text">CookMistry</span>
             </div></a>
@@ -33,33 +33,31 @@
         </nav>
     </header>
   
-
     <!-- Hero Section -->
-    <section class="category-hero breakfast-hero">
+    <section class="category-hero quick-hero">
         <div class="hero-content" data-aos="fade-right">
-            <h1>Take a Break, Refuel.</h1>
-            <p>Discover delicious and satisfying lunch recipes.</p>
+            <h1>Quick & Delicious Meals</h1>
+            <p>Fast, simple recipes perfect for busy weeknights and last-minute cooking</p>
             <div class="search-box">
-                <input type="text" id="recipeSearch" placeholder="Search lunch recipes...">
+                <input type="text" id="recipeSearch" placeholder="Search quick recipes...">
                 <button><i class="fas fa-search"></i></button>
             </div>
         </div>
         <div class="floating-images" data-aos="fade-left">
-            <img src="https://images.unsplash.com/photo-1631452180539-96aca7d48617?q=80&w=1470&auto=format&fit=crop&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Lunch" class="main-image">
-            <img src="https://images.unsplash.com/photo-1630409346699-79481a79db52?q=80&w=1497&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Buttermilk" class="float-1">
-        
+            <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?q=80&w=1374&auto=format&fit=crop&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Quick Meals" class="main-image">
+            <img src="https://images.unsplash.com/photo-1515544645059-de313dd20a58?q=80&w=1470&auto=format&fit=crop&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Quick Dish" class="float-1">
         </div>
     </section>
 
-    <!-- Popular Breakfast Categories -->
+    <!-- Popular Quick and Easy Categories -->
     <section class="sub-categories">
         <h2 class="section-title" data-aos="fade-up">Popular Categories</h2>
         <div class="category-tags" data-aos="fade-up">
-            <button class="category-tag" data-category="pancakes">Pasta</button>
-            <button class="category-tag" data-category="eggs">Butter Chicken</button>
-            <button class="category-tag" data-category="oatmeal">Biryani</button>
-            <button class="category-tag" data-category="smoothies">Rice</button>
-            <button class="category-tag" data-category="toast">Eggs</button>
+            <button class="category-tag" data-category="breakfast">Breakfast</button>
+            <button class="category-tag" data-category="lunch">Lunch</button>
+            <button class="category-tag" data-category="dinner">Dinner</button>
+            <button class="category-tag" data-category="appetizers">Appetizers</button>
+            <button class="category-tag" data-category="snacks">Snacks</button>
         </div>
     </section>
 
@@ -71,9 +69,9 @@
         </div>
     </section>
 
-    <!-- Featured Breakfast Recipes -->
+    <!-- Featured Quick and Easy Recipes -->
     <section class="featured-recipes">
-        <h2 class="section-title" data-aos="fade-up">Featured Lunch Recipes</h2>
+        <h2 class="section-title" data-aos="fade-up">Featured Quick Recipes</h2>
         <div class="recipes-grid" id="featuredRecipes">
             <!-- Will be populated by JavaScript -->
         </div>
@@ -81,22 +79,22 @@
 
     <!-- Tips Section -->
     <section class="tips-section">
-        <h2 class="section-title" data-aos="fade-up">Lunch Tips</h2>
+        <h2 class="section-title" data-aos="fade-up">Quick Cooking Tips</h2>
         <div class="tips-grid">
             <div class="tip-card" data-aos="fade-up">
                 <i class="fas fa-clock"></i>
                 <h3>Meal Prep</h3>
-                <p>Plan ahead to enjoy a hassle-free and nutritious midday meal.</p>
+                <p>Prep ingredients in advance to reduce cooking time</p>
             </div>
             <div class="tip-card" data-aos="fade-up" data-aos-delay="100">
-                <i class="fas fa-apple-alt"></i>
-                <h3>Balanced Nutrition</h3>
-                <p>Combine lean proteins, whole grains, and veggies for a satisfying lunch.</p>
+                <i class="fas fa-fire"></i>
+                <h3>High Heat Cooking</h3>
+                <p>Use high heat for quick searing and faster cooking</p>
             </div>
             <div class="tip-card" data-aos="fade-up" data-aos-delay="200">
-                <i class="fas fa-utensils"></i>
-                <h3>Portion Control</h3>
-                <p>Serve a balanced plate to keep you energized without feeling sluggish.</p>
+                <i class="fas fa-utensil-spoon"></i>
+                <h3>One-Pot Meals</h3>
+                <p>Reduce cooking and cleaning time with single-pot recipes</p>
             </div>
         </div>
     </section>
@@ -109,7 +107,7 @@
                     <i class="fas fa-utensils"></i>
                     <span>CookMistry</span>
                 </div>
-                <p>Discover and share the best lunch recipes.</p>
+                <p>Quick and easy recipes for every occasion.</p>
                 <div class="social-links">
                     <a href="#" class="social-hover"><i class="fab fa-facebook"></i></a>
                     <a href="#" class="social-hover"><i class="fab fa-instagram"></i></a>
@@ -125,6 +123,6 @@
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="/config.js"></script>
-    <script src="Lunch.js"></script>
+    <script src="Quick-and-Easy.js"></script>
 </body>
 </html>
