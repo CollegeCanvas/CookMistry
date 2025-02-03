@@ -1,6 +1,6 @@
 // Spoonacular API Configuration
 const config = {
-    API_KEY: 'de436fdde4a94f7587fe5e3d6d73c36c', // Replace with your API key
+    API_KEY: '8de2da9f377441049f8144447bb7dc08', // Replace with your API key
     BASE_URL: 'https://api.spoonacular.com/recipes',
     ENDPOINTS: {
         SEARCH: '/complexSearch',
