@@ -2,6 +2,14 @@
 
 CookMistry is a modern, responsive web application for discovering and exploring food recipes from around the world. The platform integrates with the Spoonacular API to provide users with a rich collection of recipes, nutrition information, and cooking instructions.
 
+## Screenshots
+
+![CookMistry Homepage](https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)
+*CookMistry homepage with featured recipes*
+
+![CookMistry Recipe Example](https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80)
+*Example of a healthy recipe on CookMistry*
+
 ## Features
 
 - **Recipe Search**: Find recipes by name, ingredients, or cuisine
@@ -11,6 +19,7 @@ CookMistry is a modern, responsive web application for discovering and exploring
 - **Responsive Design**: Fully functional across desktop, tablet, and mobile devices
 - **Interactive UI**: Engaging animations and modern user interface
 - **Newsletter Subscription**: Stay updated with the latest recipes and cooking tips
+- **Dark/Light Theme Toggle**: Switch between light and dark themes for comfortable viewing
 
 ## Technology Stack
 
@@ -61,6 +70,7 @@ The application uses a custom `RecipeAPI` class to handle all API interactions, 
 - Newsletter subscription with visual feedback
 - Animated counters for statistics
 - Parallax scrolling effects
+- Dark/light theme toggle for improved user experience
 
 ### Responsive Design
 
