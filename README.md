@@ -4,11 +4,11 @@ CookMistry is a modern, responsive web application for discovering and exploring
 
 ## Screenshots
 
-![CookMistry Homepage](https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)
+![CookMistry Homepage](images/ss1.png)
 *CookMistry homepage with featured recipes*
 
-![CookMistry Recipe Example](https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80)
-*Example of a healthy recipe on CookMistry*
+![CookMistry Recipe Example](images/ss2.png)
+*Example of a recipe detail page on CookMistry*
 
 ## Features
 
