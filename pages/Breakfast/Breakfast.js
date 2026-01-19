@@ -11,7 +11,7 @@ class CategoryPage {
         this.featuredGrid = document.getElementById('featuredRecipes');
         this.categoryTags = document.querySelectorAll('.category-tag');
         this.currentCategory = window.location.pathname.split('/').pop().split('.')[0];
-        
+
         this.setupEventListeners();
         this.loadFeaturedRecipes();
     }
@@ -194,3 +194,25 @@ const categoryPage = new CategoryPage();
 window.showRecipeDetails = (recipeId) => {
     categoryPage.showRecipeDetails(recipeId);
 };
+
+// Mobile Navigation Toggle
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.querySelector('.nav-links');
+if (navToggle) {
+    navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        // Animate hamburger menu
+        const spans = navToggle.querySelectorAll('span');
+        spans[0].style.transform = spans[0].style.transform === 'rotate(45deg) translate(6px, 6px)' ? '' : 'rotate(45deg) translate(6px, 6px)';
+        spans[1].style.opacity = spans[1].style.opacity === '0' ? '1' : '0';
+        spans[2].style.transform = spans[2].style.transform === 'rotate(-45deg) translate(6px, -6px)' ? '' : 'rotate(-45deg) translate(6px, -6px)';
+    });
+}
+
+// Close modal on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        const modal = document.querySelector('.recipe-modal');
+        if (modal) modal.remove();
+    }
+});
